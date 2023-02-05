@@ -1,8 +1,5 @@
 # Personal Website
 
-Built using Bootstrap 5 template gotten for free from here:
-https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
-
 ## Local development
 1. `cd` to repository root directory
 2. Build the Docker image
@@ -21,3 +18,7 @@ or with PowerShell:
 ```shell
 ./local_deployment/start.ps1
 ```
+
+## Thanks BootstrapMade.com!
+Built using Bootstrap 5 template gotten for free from here:
+https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
