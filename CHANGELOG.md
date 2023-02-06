@@ -1,6 +1,7 @@
 # Changelog
 
 # [next] - unreleased
+- vinkomlacic (VMW-7): add resume download button
 
 # [1.0.0] - 2023-02-05
 - vinkomlacic (VMW-4): initial content
