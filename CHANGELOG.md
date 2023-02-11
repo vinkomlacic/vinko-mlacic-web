@@ -1,6 +1,8 @@
 # Changelog
 
 # [next] - unreleased
+
+# [1.2.0] - 2023-02-11
 - vinkomlacic (VMW-8): integrate Google Analytics
 
 # [1.1.0] - 2023-02-11
