@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Blog | Vinko Mlačić</title>
+  <meta content="Vinko Mlačić's Blog" name="description">
+  <meta content="developer,software development,software engineering,django,django web framework,websites,apps,blog" name="keywords">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../assets/img/favicon.ico">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
+
+  <!-- Custom CSS file -->
+  <link href="../assets/css/custom.css" rel="stylesheet">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DZTF0FSH8B"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DZTF0FSH8B');
+  </script>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <header class="blog-header py-3">
+      <div class="row justify-content-between align-items-center">
+        <div class="col-4">
+          <a class="text-muted" href="https://vinkomlacic.com">vinkomlacic.com</a>
+        </div>
+        <div class="col">
+          <h3 class="blog-header-logo text-dark">Vinko Mlačić's Blog</h3>
+        </div>
+      </div>
+      <hr>
+    </header>
+  </div>
+
+  <main id="main" class="container" role="main">
+    <div class="row">
+      <div class="col-md-8 blog-main">
+        <div class="blog-post pb-5">
+          <h1 class="blog-post-title">Choices vs optgroups in Django widgets</h1>
+          <p class="blog-post-meta">
+            February 19, 2023 by <a href="https://vinkomlacic.com">Vinko Mlačić</a>
+
+            <br/>
+            <i class="text-muted">5 min read time</i>
+          </p>
+
+          <!-- Introduction -->
+          <p>
+            <i>optgroups</i> are used in most widgets that are used by the
+            <code>ChoiceField</code> or fields that inherit from it. If
+            customization of the field classes or their template is required,
+            understanding <i>optgroups</i> is very important.
+          </p>
+
+          <p>
+            An <i>optgroup</i> is a way of grouping related choices together and
+            displaying them in the widget. This allows users to easily identify
+            related options. For example, you could use <i>optgroups</i> to group
+            countries by region. <i>optgroups</i> can be nested to create a
+            hierarchy of options.
+          </p>
+          <hr/>
+
+          <h2>Choices</h2>
+          <p>
+            Normally we configure the choices of a field by setting a tuple of
+            value and label pairs.
+          </p>
+
+          <figure id="choices-example-1">
+            <pre class="prettyprint"><code>
+ class SomeModel(models.Model):
+     # ... other fields
+     country = models.CharField(
+         max_length=255,
+         choices=(('HR', 'Croatia'), ('GB', 'Great Britain'), ('MX', 'Mexico')),
+     )
+            </code></pre>
+
+            <figcaption><small class="text-muted">Choices example #1</small></figcaption>
+          </figure>
+
+          <p>However, grouping these options is possible, too.</p>
+
+          <figure id="choices-example-2">
+            <pre class="prettyprint"><code>
+ class SomeModel(models.Model):
+     # ... other fields
+     country = models.CharField(
+         max_length=255,
+         choices=(
+             ('Europe', (('HR', 'Croatia'), ('GB', 'Great Britain')),
+             ('North America', (('MX', 'Mexico'))
+         ),
+     )
+            </code></pre>
+
+            <figcaption><small class="text-muted">Choices example #2</small></figcaption>
+          </figure>
+
+          <div class="alert alert-info" role="alert">
+            <i class="bi bi-lightbulb"></i>
+            The “value” part of the choices tuple element becomes
+            the group name and the “label” part becomes a tuple (list is
+            possible too).
+          </div>
+
+          <h3>Optgroup representation of choices</h3>
+
+          <p>
+            Unlike the choices tuple, <i>optgroups</i> tuple always has the same
+            data structure. The tuple is consisted of triplets: <i>group,
+            options, index</i>.
+          </p>
+
+          <div class="alert alert-info" role="alert">
+            <i class="bi bi-lightbulb"></i>
+            Even if choices are not grouped, there will be multiple optgroups.
+            In fact, there will be as many optgroups as there are choices.
+          </div>
+
+          <p>
+            The optgroups in the <a href="#choices-example-1">example above</a>
+            would look like this:
+          </p>
+
+          <figure id="optgroups-example-1">
+            <pre class="prettyprint"><code>
+ optgroups = [
+      # Group name, options, index
+      (None, (('AG', 'Algeria'), 0),
+      (None, (('IT', 'Italy')), 1),
+	  (None, (('HR', 'Croatia')), 2),
+	  (None, (('MX', 'Mexico')), 3),
+ ]
+            </code></pre>
+
+            <figcaption><small class="text-muted">Optgroup example #1</small></figcaption>
+          </figure>
+
+          <p>
+            The optgroups for the <a href="#choices-example-2">second example</a>
+            are a bit more complex, but they conform to the same format:
+          </p>
+
+          <figure id="optgroups-example-2">
+            <pre class="prettyprint"><code>
+ optgroups = [
+     ('Africa', [('AG', 'Algeria')], 0),
+     ('Europe', [('IT', 'Italy'), ('HR', 'Croatia')], 1),
+     ('North America', [('MX', 'Mexico')], 2),
+ ]
+            </code></pre>
+
+            <figcaption><small class="text-muted">Optgroup example #2</small></figcaption>
+          </figure>
+
+        </div>
+      </div>
+
+      <aside class="col-md-4 blog-sidebar">
+        <div class="p-3 mb-3 bg-light rounder">
+          <h4 class="font-italic">About</h4>
+          <p class="mb-0">
+            This blog focuses on software development, with topics covering
+            product development, Django Web framework, and general
+            software engineering practices.
+          </p>
+        </div>
+
+        <div class="p-3">
+          <h4 class="font-italic">Elsewhere</h4>
+          <ol class="list-unstyled">
+            <li><a href="https://github.com/vinkomlacic">GitHub</a></li>
+            <li><a href="https://stackoverflow.com/vinkomlacic">Stack Overflow</a></li>
+            <li><a href="https://linkedin.com/in/mlacic">LinkedIn</a></li>
+          </ol>
+        </div>
+
+      </aside>
+    </div>
+  </main><!-- End #main -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Code Syntax Highlighting -->
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../assets/js/main.js"></script>
+
+  <!-- Custom JS File -->
+  <script src="../assets/js/custom.js"></script>
+
+</body>
+
+</html>
