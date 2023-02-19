@@ -1,6 +1,7 @@
 # Changelog
 
 # [next] - unreleased
+- vinkomlacic (VMW-9): improve app experience for mobile
 
 # [1.2.0] - 2023-02-11
 - vinkomlacic (VMW-8): integrate Google Analytics
