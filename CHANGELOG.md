@@ -2,6 +2,11 @@
 
 # [next] - unreleased
 
+# [1.3.0] - 2023-02-19
+- vinkomlacic (VMW-9): improve app experience for mobile
+- vinkomlacic (VMW-10): first blog regarding choices and optgroups
+- vinkomlacic (VMW-11): improve the UI
+
 # [1.2.0] - 2023-02-11
 - vinkomlacic (VMW-8): integrate Google Analytics
 
