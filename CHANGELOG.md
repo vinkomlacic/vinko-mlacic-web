@@ -1,22 +1,41 @@
 # Changelog
 
-# [next] - unreleased
+All notable changes to this project will be documented in this file.
 
-# [1.3.0] - 2023-02-19
-- vinkomlacic (VMW-9): improve app experience for mobile
-- vinkomlacic (VMW-10): first blog regarding choices and optgroups
-- vinkomlacic (VMW-11): improve the UI
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-# [1.2.0] - 2023-02-11
-- vinkomlacic (VMW-8): integrate Google Analytics
+## [Unreleased]
 
-# [1.1.0] - 2023-02-11
-- vinkomlacic (VMW-7): add resume download button
-- vinkomlacic (VMW-5): add Projects section
-- vinkomlacic (VMW-6): improve hero picture and favicon
+## [1.3.0] - 2023-02-19
 
-# [1.0.0] - 2023-02-05
-- vinkomlacic (VMW-4): initial content
+### Added
+ - First blog regarding choices and optgroups
 
-# [0.1.0] - 2023-02-05
-- vinkomlacic (VMW-2): release version 0.1.0
+### Changed
+ - Improve app experience for mobile
+ - General UI improvements
+
+## [1.2.0] - 2023-02-11
+
+### Added
+ - Google Analytics integration
+
+## [1.1.0] - 2023-02-11
+
+### Added
+ - Resume download button
+ - Projects section
+
+### Changed
+ - Improve hero picture and favicon
+
+## [1.0.0] - 2023-02-05
+
+### Added
+ - Initial content
+
+## [0.1.0] - 2023-02-05
+
+### Added
+ - First release
