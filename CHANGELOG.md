@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
- - Completely new looks powered by a React app.
+ - Completely new looks powered by React.
 
 ## [1.5.0] - 2023-08-15
 
