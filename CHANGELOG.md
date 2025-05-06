@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+ - GitHub CI/CD integration for automatic deployments
+
 ### Changed
 
  - Added content to the new React page
