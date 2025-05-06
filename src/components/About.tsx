@@ -9,43 +9,39 @@ const About = () => {
         <div className="grid md:grid-cols-3 gap-10">
           <div className="md:col-span-2 space-y-5 text-slate">
             <p>
-              Hello! I'm John, a passionate full-stack developer who enjoys creating things that live on the internet. 
-              My interest in web development started back in 2012 when I decided to try editing custom Tumblr themes — turns out hacking together a custom reblog button taught me a lot about HTML & CSS!
+            I'm a product-oriented software engineer with a unique global perspective, having lived and worked across
+            five countries. My approach blends technical excellence with a deep understanding of user needs, ensuring
+            every solution is robust, scalable, and meaningful.
             </p>
             
             <p>
-              Fast-forward to today, and I've had the privilege of working at an 
-              <a href="#" className="text-mint hover-underline mx-1">advertising agency</a>, 
-              a 
-              <a href="#" className="text-mint hover-underline mx-1">start-up</a>, 
-              a 
-              <a href="#" className="text-mint hover-underline mx-1">huge corporation</a>, 
-              and a 
-              <a href="#" className="text-mint hover-underline mx-1">software consultancy</a>. 
-              My main focus these days is building accessible, inclusive products and digital experiences.
+            With a Master's degree in Cyber Security, I bring advanced expertise in building secure systems, defending
+            against threats, and embedding security into every stage of development. My experience spans diverse
+            environments and teams, making me adaptable, collaborative, and effective at turning complex challenges
+            into innovative products.
+            </p>
+
+            <p>
+            Driven by curiosity and a commitment to continuous learning, I thrive on solving tough problems and
+            delivering results that matter. Whether leading cross-functional projects or diving deep into code, I aim
+            to create software that empowers users and stands the test of time.
             </p>
             
             <p>
               Here are a few technologies I've been working with recently:
             </p>
-            
-            <ul className="grid grid-cols-2 gap-2 mt-5">
-              {['JavaScript (ES6+)', 'TypeScript', 'React', 'Node.js', 'Next.js', 'Tailwind CSS'].map((tech, i) => (
-                <li key={i} className="flex items-center font-mono text-sm">
-                  <span className="text-mint mr-2">▹</span>
-                  {tech}
-                </li>
-              ))}
-            </ul>
           </div>
           
           <div className="relative group">
             <div className="relative rounded-md overflow-hidden border-2 border-mint w-full max-w-[300px] mx-auto md:ml-auto">
-              {/* Replace with your profile image or just keep a placeholder */}
               <div className="aspect-square bg-navy-light flex items-center justify-center text-mint">
-                <span className="font-mono text-4xl">JD</span>
+                <img 
+                  src="/img/profile-img.jpg" 
+                  alt="Profile Image" 
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <div className="absolute inset-0 bg-mint/20 group-hover:bg-transparent transition-all duration-300"></div>
+              <div className="absolute inset-0 bg-transparent group-hover:bg-mint/20 transition-all duration-300"></div>
             </div>
             <div className="absolute -bottom-3 -right-3 border-2 border-mint h-full w-full rounded-md -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300 max-w-[300px] hidden md:block"></div>
           </div>

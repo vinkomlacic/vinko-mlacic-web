@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -16,7 +16,7 @@ const Footer = () => {
           <Github size={20} />
         </a>
         <a 
-          href="https://linkedin.com" 
+          href="https://linkedin.com/in/mlacic" 
           target="_blank" 
           rel="noopener noreferrer"
           className="text-slate hover:text-mint transform hover:-translate-y-1 transition-all"
@@ -24,19 +24,10 @@ const Footer = () => {
         >
           <Linkedin size={20} />
         </a>
-        <a 
-          href="https://twitter.com" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="text-slate hover:text-mint transform hover:-translate-y-1 transition-all"
-          aria-label="Twitter"
-        >
-          <Twitter size={20} />
-        </a>
       </div>
       <div className="font-mono text-xs">
-        <p>Designed & Built by John Doe</p>
-        <p className="mt-2 text-slate-dark">© 2025</p>
+        <p>Designed & Built by Vinko Mlačić</p>
+        <p className="mt-2 text-slate-dark">© {new Date().getFullYear()}</p>
       </div>
     </footer>
   );

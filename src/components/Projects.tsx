@@ -64,7 +64,7 @@ const Project = ({ title, description, tech, links, reverse = false }: ProjectPr
     </div>
     
     {/* Image */}
-    <div 
+    {/* <div 
       className={`rounded-md md:col-span-7 ${
         reverse ? 'md:col-start-1 md:col-end-8' : 'md:col-start-6 md:col-end-13'
       } md:absolute md:h-full`}
@@ -73,38 +73,28 @@ const Project = ({ title, description, tech, links, reverse = false }: ProjectPr
         <div className="absolute inset-0 bg-mint/5 hover:bg-transparent border border-mint/20 hover:border-mint/40 rounded-md transition-all duration-300"></div>
         <span className="font-mono text-4xl text-mint opacity-40">Project Image</span>
       </div>
-    </div>
+    </div> */}
   </div>
 );
 
 const Projects = () => {
   const projectsData = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-featured e-commerce platform with product listings, user authentication, shopping cart, payment processing, and order management. Built with React, Node.js, and MongoDB.",
-      tech: ["React", "Node.js", "Express", "MongoDB", "Stripe", "Redux"],
+      title: "Recipe management app",
+      description: "A Django application for creating and publishing recipes. Check it out here. You will need access to a demo account, so make sure you check out the README.",
+      tech: ["Django", "Python", "Bootstrap", "PostgreSQL"],
       links: {
-        github: "https://github.com",
-        live: "https://project.com",
+        github: "https://github.com/vinkomlacic/recipy",
+        live: "https://recipy.vinkomlacic.com",
       },
     },
     {
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features. Implemented using the MERN stack.",
-      tech: ["TypeScript", "React", "Express", "Socket.io", "MongoDB", "JWT"],
+      title: "URL Shortener",
+      description: " A Django application for creating and publishing recipes. You will need access to a demo account, so make sure you check out the README.",
+      tech: ["Django", "Python", "Bootstrap", "PostgreSQL"],
       links: {
-        github: "https://github.com",
-        live: "https://project.com",
-      },
-      reverse: true,
-    },
-    {
-      title: "Social Media Dashboard",
-      description: "An analytics dashboard that aggregates data from various social media platforms and presents it in an intuitive and visually appealing way. Built with Next.js and Chart.js.",
-      tech: ["Next.js", "Chart.js", "Tailwind CSS", "API Integration", "Vercel"],
-      links: {
-        github: "https://github.com",
-        live: "https://project.com",
+        github: "https://github.com/vinkomlacic/url-shortener",
+        live: "https://urls.vinkomlacic.com",
       },
     },
   ];
@@ -122,12 +112,11 @@ const Projects = () => {
         
         <div className="mt-20 text-center">
           <h3 className="text-slate-light text-xl font-bold mb-6">Other Noteworthy Projects</h3>
-          <Button asChild>
+          <Button className="bg-transparent hover:bg-mint/10 text-mint border border-mint px-6 py-2 rounded" asChild>
             <a 
-              href="https://github.com" 
+              href="https://github.com/vinkomlacic" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="bg-transparent hover:bg-mint/10 text-mint border border-mint px-6 py-2 rounded"
             >
               View More on GitHub
               <Github className="ml-2" size={18} />
