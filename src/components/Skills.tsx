@@ -35,22 +35,22 @@ const Skills = () => {
     {
       title: "Frontend Development",
       icon: <Layout size={24} />,
-      skills: ["React", "Next.js", "TypeScript", "Redux", "Tailwind CSS", "Material UI", "Responsive Design", "Performance Optimization"]
+      skills: ["Responsive Design", "Performance Optimization", "React", "Next.js", "TypeScript", "Redux", "Tailwind CSS", "Material UI"]
     },
     {
       title: "Backend Development",
       icon: <Server size={24} />,
-      skills: ["Node.js", "Express", "NestJS", "REST APIs", "GraphQL", "Serverless", "Authentication", "Authorization"]
+      skills: ["REST APIs", "Serverless", "Authentication", "Authorization", "Django / DRF", "Celery", "Node.js"]
     },
     {
       title: "Database Management",
       icon: <Database size={24} />,
-      skills: ["MongoDB", "PostgreSQL", "MySQL", "Prisma", "Mongoose", "Redis", "Query Optimization", "Data Modeling"]
+      skills: ["PostgreSQL", "MongoDB", "MySQL", "Redis", "Query Optimization", "Data Modeling"]
     },
     {
       title: "Additional Skills",
       icon: <Code size={24} />,
-      skills: ["Git", "Docker", "Jest", "CI/CD", "AWS", "Firebase", "Agile Methodology", "Technical Writing"]
+      skills: ["Git", "Docker", "CI/CD", "AWS", "Agile Methodology", "Technical Writing"]
     }
   ];
 

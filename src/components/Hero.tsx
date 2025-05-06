@@ -1,5 +1,4 @@
 
-import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
@@ -9,12 +8,15 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto w-full">
         <div className="stagger-animate">
           <h1 className="font-mono text-mint text-base md:text-lg mb-5">Hi, my name is</h1>
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-light mb-4">John Doe.</h2>
-          <h3 className="text-3xl md:text-5xl lg:text-6xl font-bold text-slate mb-8">I build things for the web.</h3>
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-light mb-4">Vinko Mlačić.</h2>
+          <h3 className="text-3xl md:text-5xl lg:text-6xl font-bold text-slate mb-8">
+            I'm a Product-Driven Software Engineer.
+          </h3>
           
           <p className="max-w-xl text-slate text-lg md:text-xl mb-12">
-            I'm a full-stack developer specializing in building exceptional digital experiences. 
-            Currently, I'm focused on building accessible, human-centered products.
+          With a passion for crafting reliable products and a global perspective shaped by living in five countries,
+          I design and deliver software that solves real-world problems. Master’s in Cyber Security. Let’s create the
+          future, securely.
           </p>
           
           <Button 

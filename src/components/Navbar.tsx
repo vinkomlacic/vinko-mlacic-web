@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Menu, X } from "lucide-react";
@@ -63,7 +63,7 @@ const Navbar = () => {
               ))}
             </ul>
             
-            <Button 
+            {/* <Button 
               variant="outline" 
               className="border-mint text-mint hover:bg-mint/10 rounded"
               asChild
@@ -71,7 +71,7 @@ const Navbar = () => {
               <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
                 Resume
               </a>
-            </Button>
+            </Button> */}
           </nav>
         )}
 
@@ -101,7 +101,7 @@ const Navbar = () => {
                   ))}
                 </ul>
                 
-                <Button 
+                {/* <Button 
                   variant="outline" 
                   className="border-mint text-mint hover:bg-mint/10 rounded text-lg px-6 py-3 animate-fade-in-up"
                   style={{ animationDelay: '500ms' }}
@@ -110,7 +110,7 @@ const Navbar = () => {
                   <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" onClick={toggleMenu}>
                     Resume
                   </a>
-                </Button>
+                </Button> */}
               </nav>
             </div>
           </div>
