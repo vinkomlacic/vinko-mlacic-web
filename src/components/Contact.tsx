@@ -1,5 +1,4 @@
 
-import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
 
@@ -11,14 +10,15 @@ const Contact = () => {
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-light mb-6">Get In Touch</h2>
         
         <p className="text-slate text-lg mb-12">
-          I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+          I'm always looking for new opportunities to connect with curious minds. Whether you have a question or
+          just want to say hi, I'll try my best to get back to you!
         </p>
         
         <Button 
           className="bg-transparent hover:bg-mint/10 text-mint border border-mint px-7 py-6 rounded text-lg group"
           asChild
         >
-          <a href="mailto:hello@example.com">
+          <a href="mailto:vinkomlacic@outlook.com">
             <Mail className="mr-2" size={20} />
             Say Hello
           </a>
