@@ -46,6 +46,7 @@ jobs:
             docker build -t vinko-mlacic-web:${{ github.ref_name }} .
             docker tag vinko-mlacic-web:${{ github.ref_name }} vinko-mlacic-web:latest
   deploy:
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
@@ -57,4 +58,4 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /home/${{ secrets.SERVER_USER }}/reverse-proxy
-            docker compose up -d --build
+            docker compose up -d
