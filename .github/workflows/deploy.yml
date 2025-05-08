@@ -45,8 +45,10 @@ jobs:
             cd /home/${{ secrets.SERVER_USER }}/vinko-mlacic-web
             docker build -t vinko-mlacic-web:${{ github.ref_name }} .
             docker tag vinko-mlacic-web:${{ github.ref_name }} vinko-mlacic-web:latest
-    deploy:
+  deploy:
+    runs-on: ubuntu-latest
 
+    steps:
       - name: Deploy on Production (Recreates the docker containers)
         uses: appleboy/ssh-action@v1.0.3
         with:
