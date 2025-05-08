@@ -6,7 +6,7 @@ on:
       - '*' # Triggers on version tags like 1.0.0
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     
     steps:
@@ -31,11 +31,11 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "dist/,Dockerfile,docker-compose.yml,nginx.conf"
+          source: "dist/,Dockerfile,nginx.conf"
           target: "/home/${{ secrets.SERVER_USER }}/vinko-mlacic-web"
           strip_components: 0
 
-      - name: Deploy to server
+      - name: Build Docker image
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SERVER_HOST }}
@@ -43,5 +43,16 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /home/${{ secrets.SERVER_USER }}/vinko-mlacic-web
-            docker compose down
+            docker build -t vinko-mlacic-web:${{ github.ref_name }} .
+            docker tag vinko-mlacic-web:${{ github.ref_name }} vinko-mlacic-web:latest
+    deploy:
+
+      - name: Deploy on Production (Recreates the docker containers)
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /home/${{ secrets.SERVER_USER }}/reverse-proxy
             docker compose up -d --build
